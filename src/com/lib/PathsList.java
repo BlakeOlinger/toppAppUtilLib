@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public final class PathsList {
     public static Path userIni = null;
     public static Path toppAppConfig = null;
-    public static Path SWexe = null;
+    static Path SWexe = null;
     public static Path SWconfig = null;
     public static Path DDTO = null;
     public static ArrayList<Path> baseBlempPaths = new ArrayList<>();

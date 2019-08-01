@@ -10,5 +10,6 @@ public final class Commands {
         public static final String USER_ACTION_SET = "001!";
         public static final String CLOSE_SW_PART = "010!";
         public static final String EXIT = "111!";
+        public static final String EXE_START = "\"" + PathsList.SWexe.toString() + "\"";
     }
 }

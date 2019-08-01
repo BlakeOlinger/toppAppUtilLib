@@ -19,6 +19,7 @@ public final class ExecuteProcess extends RecursiveAction {
                     command
             ).start();
 
+            System.out.println(" - process ID - " + "cmd.exe /c " + command);
             process.waitFor();
 
             process.destroy();
