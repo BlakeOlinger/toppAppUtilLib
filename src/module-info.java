@@ -1,5 +1,5 @@
 module toppAppUtilLib {
     requires org.jetbrains.annotations;
 
-    exports com.practice;
+    exports com.lib;
 }

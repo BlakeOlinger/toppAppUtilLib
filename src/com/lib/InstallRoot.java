@@ -1,4 +1,4 @@
-package com.practice;
+package com.lib;
 
 import org.jetbrains.annotations.NotNull;
 
