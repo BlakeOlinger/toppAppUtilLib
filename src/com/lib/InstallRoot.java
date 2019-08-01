@@ -1,12 +1,8 @@
 package com.lib;
-
-import org.jetbrains.annotations.NotNull;
-
 import java.nio.file.Paths;
 
 public final class InstallRoot {
 
-    @NotNull
     public static String getInstallRoot(String installDirectoryName) {
         var currentDirectory = Paths.get("").toAbsolutePath();
 

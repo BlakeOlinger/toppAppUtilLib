@@ -1,14 +1,12 @@
 package com.lib;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public final class BlobDirectory {
-    public static boolean validateLocalBlobDatabaseInstance(@NotNull Path installDirectory) {
+    public static boolean validateLocalBlobDatabaseInstance(Path installDirectory) {
         var fileCheckStringPath = installDirectory.toString() + "\\blob\\.git";
 
         var fileCheck = Paths.get(fileCheckStringPath);
