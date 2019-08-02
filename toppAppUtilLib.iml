@@ -51,5 +51,22 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library name="JUnit5.4">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-jupiter-5.4.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-jupiter-api-5.4.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/apiguardian-api-1.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/opentest4j-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-platform-commons-1.4.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-jupiter-params-5.4.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-jupiter-engine-5.4.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../GlobalLibraries/Jetbrains Annotations/junit-platform-engine-1.4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="boLib" level="project" />
   </component>
 </module>

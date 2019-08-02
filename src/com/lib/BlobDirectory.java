@@ -3,18 +3,9 @@ package com.lib;
 import java.nio.file.Files;
 
 public final class BlobDirectory {
+    // TODO - fully test this method - modify so each possibility returns unique ENUM
+    //  -  or exception like the current InvalidInstallException -
     public static void validateLocalBlobDatabaseInstance() throws InvalidInstallException {
-//        var fileCheckStringPath = installDirectory.toString() + "\\blob\\.git";
-//
-//        var process = new ProcessBuilder("cmd.exe", "/c", "cd",
-//                PathsList.INSTALL_DIRECTORY.toString() + "\\blob", "&&", "git", "pull")
-//                .start();
-//
-//        var fileCheck = Paths.get(fileCheckStringPath);
-//        var process = new ProcessBuilder("cmd.exe", "/c", "cd",
-//                installDirectory.toString(), "&&", "git", "clone",
-//                "https://github.com/BlakeOlinger/blob").start();
-
         if (Files.exists(PathsList.LOCAL_DB_INSTALL_CHECK_FILE)) {
             System.out.println(" - Local Blob Database Instance - Found");
 
@@ -22,17 +13,16 @@ public final class BlobDirectory {
                 if (Internet.isConnected()) {
                     System.out.println(" - Syncing local database instance with remote");
 
-                    new ExecuteProcess("cmd.exe", "/c", "cd",
-                            PathsList.INSTALL_DIRECTORY.toString() + "\\blob",
-                            "&&", "git", "pull").execute();
+                    // TODO - move ExecuteProcess to lower level lib - fully test
+//                    new ExecuteProcess(PathsList.INSTALL_DIRECTORY, "cmd.exe", "/c", "git", "pull").execute();
                 } else
                     System.out.println(" - Could not update local database instance - no internet connection");
         } else
             if (Internet.isConnected()) {
                     System.out.println(" - Local Blob Database Instance - Not Found");
 
-                    new ExecuteProcess("cmd.exe", "/c", "cd", PathsList.INSTALL_DIRECTORY.toString(),
-                            "&&", "git", "clone", "https://github.com/BlakeOlinger/blob").execute();
+//                    new ExecuteProcess(PathsList.INSTALL_DIRECTORY, "cmd.exe", "/c","git",
+//                            "clone", "https://github.com/BlakeOlinger/blob").execute();
 
                     if (Files.exists(PathsList.LOCAL_DB_INSTALL_CHECK_FILE))
                         System.out.println(" - Local Blob Database Instance - Created");

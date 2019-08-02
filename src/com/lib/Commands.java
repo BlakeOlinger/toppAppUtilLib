@@ -1,5 +1,7 @@
 package com.lib;
 
+import java.nio.file.Paths;
+
 public final class Commands {
     public static final String GUI_INIT = "00";
     public static final String PROGRAM_INIT = "01";
