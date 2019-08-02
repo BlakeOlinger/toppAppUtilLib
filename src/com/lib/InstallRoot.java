@@ -1,18 +1,44 @@
 package com.lib;
+
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
-public final class InstallRoot {
+final class InstallRoot {
 
-    public static String getInstallRoot(String installDirectoryName) {
-        var currentDirectory = Paths.get("").toAbsolutePath();
+    static Path getInstallRootPath(String currentDirectory, String userName) {
+         var splitPathMap = splitAtPathSlash(currentDirectory);
 
-        var workingDirectoryChunks = currentDirectory.toString().split("\\\\");
+         // if detects a non-windows backward slash return null
+         // - add linux etc later if needed
+         if (splitPathMap.containsKey(SlashDelimiterType.BACKWARD))
+             return Paths.get(splitPathMap.get(SlashDelimiterType.BACKWARD)
+                     + "\\Users\\" + userName + "\\Desktop\\" + FileNames.INSTALL_DIRECTORY);
 
-        var installRoot = "C:\\Users\\" + workingDirectoryChunks[2] +
-                "\\Desktop\\" + installDirectoryName + "\\";
+         return Paths.get("");
+     }
 
-        System.out.println(" - Install Root - " + installRoot);
+    static Map<SlashDelimiterType, String> splitAtPathSlash(String currentDirectory) {
+        switch (getSlashDelimiterType(currentDirectory)) {
+            case FORWARD:
+                return Map.of(SlashDelimiterType.FORWARD, currentDirectory.split("/")[0]);
+            case BACKWARD:
+                return Map.of(SlashDelimiterType.BACKWARD, currentDirectory.split("\\\\")[0]);
+            default:
+                return Map.of(SlashDelimiterType.NULL, "");
+        }
+    }
 
-        return  installRoot;
+    static SlashDelimiterType getSlashDelimiterType (String currentDirectory) {
+        if (currentDirectory.contains("/"))
+            return SlashDelimiterType.FORWARD;
+        else if (currentDirectory.contains("\\"))
+            return SlashDelimiterType.BACKWARD;
+        else
+            return SlashDelimiterType.NULL;
+    }
+
+    enum SlashDelimiterType {
+        FORWARD, BACKWARD, NULL
     }
 }
