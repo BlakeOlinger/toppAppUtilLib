@@ -30,26 +30,26 @@ public final class ToppFiles {
         }
     }
 
-    public static void validateDirectory(String directoryName, Path directoryPath) throws InvalidInstallException {
-
-        if (Files.exists(directoryPath))
-            System.out.println(" - " + directoryName + " Directory - Found");
-        else {
-            try {
-                System.out.println(" - " + directoryName + " - Not Found");
-
-                Files.createDirectory(directoryPath);
-
-                System.out.println(" - " + directoryName + " - Directory Created");
-            } catch (IOException e) {
-                e.printStackTrace();
-
-                System.out.println("TOPP App GUI - Exit");
-
-                throw new InvalidInstallException(directoryName);
-            }
-        }
-    }
+//    public static void validateDirectory(String directoryName, Path directoryPath) throws InvalidInstallException {
+//
+//        if (Files.exists(directoryPath))
+//            System.out.println(" - " + directoryName + " Directory - Found");
+//        else {
+//            try {
+//                System.out.println(" - " + directoryName + " - Not Found");
+//
+//                Files.createDirectory(directoryPath);
+//
+//                System.out.println(" - " + directoryName + " - Directory Created");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//
+//                System.out.println("TOPP App GUI - Exit");
+//
+//                throw new InvalidInstallException(directoryName);
+//            }
+//        }
+//    }
 
     public static boolean writeFile(String fileName, Path path, String writeMessage) {
         try {

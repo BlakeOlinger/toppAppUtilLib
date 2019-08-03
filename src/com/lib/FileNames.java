@@ -1,7 +1,6 @@
 package com.lib;
 
 public final class FileNames {
-    public static final String INSTALL_DIRECTORY = "SolidWorks Daemon";
     public static final String DB_DAEMON_JAR = "toppAppDBdaemon.jar";
     public static final String GUI_INI = "GUI.ini";
     public static final String GUI_CONFIG = "GUI.config";
