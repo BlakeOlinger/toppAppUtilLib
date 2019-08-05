@@ -10,4 +10,5 @@ public final class FileNames {
     public static final String PREVIEW_MS_CONFIG = "toppAppPreview.config";
     public static final String LOCAL_DB_INSTALL_CHECK_FILE = ".git";
     public static final String INSTALL_DIRECTORY = "SolidWorks Daemon";
+    public static final String BLOB_DATABASE_URL = "https://github.com/BlakeOlinger/blob";
 }
