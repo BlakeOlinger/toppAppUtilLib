@@ -1,5 +1,7 @@
 package com.lib;
 
+import bo.core.system.PathUtil;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -15,7 +17,19 @@ public final class PathsList {
                     FileNames.DDTO, Paths.get("")
             )
     );
-    public static Path SWexe = null;
+    public static final Path ROOT_INSTALL_DIRECTORY = PathUtil.stringToPath(
+            "C:", "Users", System.getProperty("user.name"),
+            "Desktop", FileNames.INSTALL_DIRECTORY
+    );
+    public static final Path SW_MS_EXE_DIRECTORY = PathUtil.addStringToPath(
+            ROOT_INSTALL_DIRECTORY,
+            FileNames.PROGRAM_BIN_DATABASE_INSTALL_DIRECTORY
+            );
+    public static final Path SW_MS_EXE = PathUtil.addStringToPath(
+            ROOT_INSTALL_DIRECTORY,
+            FileNames.PROGRAM_BIN_DATABASE_INSTALL_DIRECTORY,
+            FileNames.SW_MS_EXE
+            );
     public static ArrayList<Path> baseBlempPaths = new ArrayList<>();
     public static Path userSelectedBlemp = null;
     public static String blobString = null;

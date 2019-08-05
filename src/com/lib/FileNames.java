@@ -11,4 +11,5 @@ public final class FileNames {
     public static final String INSTALL_DIRECTORY = "SolidWorks Daemon";
     public static final String BLOB_DATABASE_URL = "https://github.com/BlakeOlinger/blob";
     public static final String PROGRAM_BIN_DATABASE_URL = "https://github.com/BlakeOlinger/TOPPbin";
+    public static final String PROGRAM_BIN_DATABASE_INSTALL_DIRECTORY = "TOPPbin";
 }

@@ -1,10 +1,9 @@
 package com.lib;
 
-import bo.core.system.FilesUtil;
 import bo.core.system.PathUtil;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class InitializeTest {
 
@@ -15,7 +14,8 @@ class InitializeTest {
         try {
             assertTrue(Initialize.microservice(Microservice.TOPP_APP));
         } finally {
-            FilesUtil.delete(testRoot);
+            // throws an access denied exception on the local database instance's hidden files
+//            FilesUtil.delete(testRoot);
         }
     }
 }
