@@ -9,4 +9,5 @@ public final class FileNames {
     public static final String DDTO = "DDTO.blemp";
     public static final String PREVIEW_MS_CONFIG = "toppAppPreview.config";
     public static final String LOCAL_DB_INSTALL_CHECK_FILE = ".git";
+    public static final String INSTALL_DIRECTORY = "SolidWorks Daemon";
 }
