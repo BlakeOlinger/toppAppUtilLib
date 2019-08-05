@@ -13,14 +13,22 @@ public final class Initialize {
                         new IniFile(FileNames.GUI_INI, Commands.GUI_INI),
                         FileNames.GUI_CONFIG, FileNames.SW_MS_CONFIG, FileNames.DDTO
                 );
-               var databaseInitSuccess = LocalDatabase.initialize(
+
+               var blobDatabaseInitSuccess = LocalDatabase.initialize(
                        FileNames.BLOB_DATABASE_URL,
                        "C:", "Users",
                        System.getProperty("user.name"), "Desktop",
                        FileNames.INSTALL_DIRECTORY
                );
 
-                return initSuccess && databaseInitSuccess;
+               var programBinDatabaseInitSuccess = LocalDatabase.initialize(
+                       FileNames.PROGRAM_BIN_DATABASE_URL,
+                       "C:", "Users",
+                       System.getProperty("user.name"), "Desktop",
+                       FileNames.INSTALL_DIRECTORY
+               );
+
+                return initSuccess && blobDatabaseInitSuccess && programBinDatabaseInitSuccess;
             default:
                 return false;
         }
